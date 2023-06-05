@@ -51,7 +51,7 @@ router.get(`/${API}/offers`, async (req, res) => {
       hotelIds: hotelId,
     });
     const newOffer = JSON.parse(JSON.stringify(offersResponse));
-    const price = Math.round(Math.random() * 1000);
+    const price = Math.round(Math.random() * 1000 + 1000);
     newOffer.data[0].offers[0].price.base = price;
     newOffer.data[0].offers[0].price.total = price;
     setTimeout(async () => {
